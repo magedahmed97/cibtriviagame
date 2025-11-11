@@ -1,97 +1,489 @@
-<!DOCTYPE html>
-<html lang="en">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="Style.css">
-</head>
-
-<body onload="NextQuestion(0)">
-	<main>
-		<!-- creating a modal for when quiz ends -->
-		<div class="modal-container" id="score-modal">
-
-			<div class="modal-content-container">
-
-				<h1>Quiz completed, well done!</h1>
-
-				<div class="grade-details">
-
-					<p>Wrong Answers : <span id="wrong-answers"></span></p>
-					<p>Right Answers : <span id="right-answers"></span></p>
-					<!--	<p>Grade : <span id="grade-percentage"></span></p> -->
-					<p><span id="remarks"></span></p>
-				</div>
-
-				<div class="modal-button-container">
-					<button onclick="closeScoreModal()">Continue</button>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="game-quiz-container">
-
-			<div class="game-details-container">
-				<h1>Score : <span id="player-score"></span> / 5</h1>
-				<h1> Question : <span id="question-number"></span> / 5</h1>
-			</div>
-
-			<div class="game-question-container">
-				<h1 id="display-question"></h1>
-			</div>
-
-			<div class="game-options-container">
-
-				<div class="modal-container" id="option-modal">
-
-					<div class="modal-content-container">
-						<h1>Please Pick An Option</h1>
-
-						<div class="modal-button-container">
-							<button onclick="closeOptionModal()">Continue</button>
-						</div>
-
-					</div>
-
-				</div>
-
-				<span>
-					<input type="radio" id="option-one" name="option" class="radio" value="optionA" />
-					<label for="option-one" class="option" id="option-one-label"></label>
-				</span>
+html,
+body {
+    height: 100%;
+}
 
 
-				<span>
-					<input type="radio" id="option-two" name="option" class="radio" value="optionB" />
-					<label for="option-two" class="option" id="option-two-label"></label>
-				</span>
+body {
+    font-family: VodafoneRg;
+    /* Optional: Set your preferred font */
+    -webkit-user-select: none;
+    user-select: none;
+}
 
 
-				<span>
-					<input type="radio" id="option-three" name="option" class="radio" value="optionC" />
-					<label for="option-three" class="option" id="option-three-label"></label>
-				</span>
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('assets/Main Game Background.png');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.game-quiz-container {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    min-height: 80vh;
+    background-image: url('assets/Game  Container Background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.game-details-container {
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.game-details-container h1 {
+    font-size: 1.3rem;
+    color: #FFF6B2;
+    font-family: VodafoneRgBd_0;
+}
+
+.game-details-container h1:first-child {
+    margin-left: 2rem;
+}
+
+.game-details-container h1:last-child {
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.game-question-container {
+    width: 100%;
+    height: auto;
+    min-height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin-top: 0;
+    padding: 1rem;
+    border: none;
+    background: transparent;
+}
+
+.game-question-container h1 {
+    font-size: 20px;
+    text-align: center;
+    color: #FFF6B2;
+    padding: 3px;
+    max-width: 70%;
+    word-wrap: break-word;
+
+}
+
+.game-options-container {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.game-options-container span {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+}
+
+span label {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 3rem;
+    border: 0.25rem solid #FFF6B2;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 800;
+    color: rgb(225, 225, 225);
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 0.6rem;
+    margin-left: 0;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+span label:hover {
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    color: #FFF6B2;
+}
+
+input[type="radio"] {
+    position: relative;
+    display: none;
+}
+
+/* option box  color when checked*/
+input[type=radio]:checked~.option {
+    background: #FFF6B2;
+}
 
 
-				<span>
-					<input type="radio" id="option-four" name="option" class="radio" value="optionD" />
-					<label for="option-four" class="option" id="option-four-label"></label>
-				</span>
+/* option box text change when checked used when basic color not clear with option color*/
+input[type="radio"]:checked+label {
+    color: black !important;
+    /* Change the color to black */
+}
+
+input[type="radio"]:checked+label {
+    color: black;
+    /* Change the color to black */
+}
+
+.next-button-container {
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-left: 0;
+}
+
+.next-button-container button {
+    width: 18rem;
+    height: 3rem;
+    border: 0.25rem solid #FFF6B2;
+    border-radius: 0.9rem;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    font-weight: 1000;
+    cursor: pointer;
+}
+
+.next-button-container button:hover {
+    background-color: #FFF6B2;
+
+}
+
+.next-button-container button:hover,
+.modal-button-container button:hover {
+    color: black !important;
+}
+
+.next-button-container button:checked {
+    color: black;
+    /* Change text color when checked */
+}
 
 
-			</div>
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-animation: fadeIn 1.2s ease-in-out;
+    animation: fadeIn 1.2s ease-in-out;
+}
 
-			<div class="next-button-container">
-				<button onclick="handleNextQuestion()">Next Question</button>
-			</div>
+.modal-content-container {
+    height: auto;
+    min-height: 10rem;
+    width: 25rem;
+    background-color: rgb(35, 3, 151);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 0.25rem solid #FFF6B2;
+    border-radius: 0.9rem;
+    margin-left: 1.5rem;
+}
 
+.modal-content-container h1 {
+    font-size: 1.3rem;
+    height: auto;
+    color: lightgray;
+    text-align: center;
+}
 
-		</div>
-		<div class="next-button-container">
+.grade-details {
+    width: 15rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 
-	</main>
-	<script src="script.js"></script>
+.grade-details p {
+    color: white;
+    text-align: center;
+}
 
-</body>
+.modal-button-container {
+    height: 2rem;
+    width: 35%;
+    display: flex;
+    background-image: url('assets/Next Button.png');
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-button-container button {
+    width: 10rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0.2rem solid #FFF6B2;
+    border-radius: 0.75rem;
+    outline: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.modal-button-container button:hover {
+    background-color: #FFF6B2;
+}
+
+.modal-button-container button:checked {
+    color: black;
+    /* Change text color when checked */
+}
+
+/* General Mobile/Tablet Adjustments */
+@media (max-width: 600px) {
+    .game-quiz-container {
+        width: 95%;
+        min-height: 90vh;
+        padding: 1rem;
+    }
+
+    .game-details-container {
+        padding: 0.75rem 0;
+        gap: 0.5rem;
+    }
+
+    .game-details-container h1 {
+        font-size: 0.9rem;
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
+    }
+
+    .game-details-container h1:first-child {
+        margin-left: 0.5rem;
+    }
+
+    .game-details-container h1:last-child {
+        margin-right: 0.5rem;
+        margin-left: auto;
+    }
+
+    .game-question-container {
+        min-height: 8rem;
+        padding: 0.75rem;
+    }
+
+    .game-question-container h1 {
+        font-size: 1rem;
+        max-width: 90%;
+        padding: 0.5rem;
+    }
+
+    .game-options-container {
+        gap: 0.5rem;
+        width: 95%;
+        margin-top: 1rem;
+    }
+
+    span label {
+        font-size: 0.85rem;
+        padding: 0.6rem;
+        min-height: 3rem;
+        border: 0.2rem solid #FFF6B2;
+    }
+
+    .next-button-container {
+        width: 95%;
+        margin-top: 1rem;
+    }
+
+    .next-button-container button {
+        width: 100%;
+        height: 2.5rem;
+        font-size: 0.95rem;
+        border: 0.2rem solid #FFF6B2;
+    }
+
+    .modal-content-container {
+        width: 90%;
+        min-height: 12rem;
+        margin-left: 0;
+    }
+
+    .modal-content-container h1 {
+        font-size: 1.1rem;
+        padding: 0.5rem;
+    }
+
+    .grade-details {
+        width: 90%;
+        height: auto;
+    }
+
+    .grade-details p {
+        font-size: 0.85rem;
+        margin: 0.3rem 0;
+    }
+
+    .modal-button-container {
+        width: 50%;
+        height: auto;
+    }
+
+    .modal-button-container button {
+        width: 80%;
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile Devices (max-width: 380px) - Xiaomi Mi 11 Lite and similar */
+@media (max-width: 380px) {
+    .game-quiz-container {
+        width: 98%;
+        min-height: 95vh;
+        padding: 0.5rem;
+    }
+
+    .game-details-container {
+        padding: 0.5rem 0;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .game-details-container h1 {
+        font-size: 0.8rem;
+        margin: 0.25rem !important;
+    }
+
+    .game-question-container {
+        min-height: 7rem;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .game-question-container h1 {
+        font-size: 0.9rem;
+        max-width: 95%;
+        padding: 0.25rem;
+        line-height: 1.3;
+    }
+
+    .game-options-container {
+        gap: 0.35rem;
+        width: 98%;
+        margin-top: 0.75rem;
+    }
+
+    span label {
+        font-size: 0.75rem;
+        padding: 0.4rem;
+        min-height: 2.8rem;
+        border: 0.15rem solid #FFF6B2;
+    }
+
+    .next-button-container {
+        width: 98%;
+        margin-top: 0.75rem;
+    }
+
+    .next-button-container button {
+        width: 100%;
+        height: 2.3rem;
+        font-size: 0.85rem;
+        border: 0.15rem solid #FFF6B2;
+    }
+
+    .modal-content-container {
+        width: 95%;
+        min-height: 10rem;
+    }
+
+    .modal-content-container h1 {
+        font-size: 0.95rem;
+    }
+}
+
+/* Medium Mobile Devices (381px to 480px) */
+@media (min-width: 381px) and (max-width: 480px) {
+    .game-quiz-container {
+        width: 96%;
+        min-height: 90vh;
+        padding: 0.75rem;
+    }
+
+    .game-details-container h1 {
+        font-size: 0.85rem;
+    }
+
+    .game-question-container h1 {
+        font-size: 0.95rem;
+    }
+
+    .next-button-container button {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+/* Large Mobile Devices (481px to 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+    .game-quiz-container {
+        width: 93%;
+        min-height: 85vh;
+    }
+
+    .game-details-container h1 {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet Adjustments (601px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .game-quiz-container {
+        width: 70%;
+        min-height: 70vh;
+    }
+}
