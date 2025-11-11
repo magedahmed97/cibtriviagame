@@ -65,7 +65,7 @@ main {
 .game-question-container {
     width: 100%;
     height: auto;
-    min-height: 40rem;
+    min-height: 10rem;
     background-image: url('assets/Game Question Container .png');
     background-size: cover;
     display: flex;
