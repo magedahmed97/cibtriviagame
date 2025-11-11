@@ -1,0 +1,620 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+body {
+    font-family: VodafoneRg;
+    /* Optional: Set your preferred font */
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('assets/Main Game Background.png');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.game-quiz-container {
+    width: 35rem;
+    height: 62rem;
+    background-image: url('assets/Game  Container Background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 95%;
+}
+
+.game-details-container {
+    width: 140%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.game-details-container h1 {
+    font-size: 1.3rem;
+    color: #FFF6B2;
+    font-family: VodafoneRgBd_0;
+}
+
+.game-question-container {
+    width: 100%;
+    height: 20rem;
+    background-image: url('assets/Game Question Container .png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin-top: -5rem;
+}
+
+.game-question-container h1 {
+    font-size: 20px;
+    text-align: center;
+    color: #FFF6B2;
+    padding: 3px;
+    max-width: 70%;
+    word-wrap: break-word;
+
+}
+
+.game-options-container {
+    width: 110%;
+    height: 14rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    /* Adjust top margin as needed */
+
+
+}
+
+.game-options-container span {
+    width: 100%;
+    height: 5rem;
+    margin-top: -15rem;
+
+
+}
+
+span label {
+    display: flex;
+    width: 30%;
+    height: 50%;
+    border: 0.25rem solid #FFF6B2;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 800;
+    color: rgb(225, 225, 225);
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 0.6rem;
+    margin-left: 14rem;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+span label:hover {
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    color: #FFF6B2;
+}
+
+input[type="radio"] {
+    position: relative;
+    display: none;
+}
+
+/* option box  color when checked*/
+input[type=radio]:checked~.option {
+    background: #FFF6B2;
+}
+
+
+/* option box text change when checked used when basic color not clear with option color*/
+input[type="radio"]:checked+label {
+    color: black !important;
+    /* Change the color to black */
+}
+
+input[type="radio"]:checked+label {
+    color: black;
+    /* Change the color to black */
+}
+
+.next-button-container {
+    width: 60%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.next-button-container button {
+    width: 18rem;
+    height: 3rem;
+    border: 0.25rem solid #FFF6B2;
+    border-radius: 0.9rem;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    font-weight: 1000;
+    cursor: pointer;
+    margin-top: -12rem;
+    margin-left: 1rem;
+}
+
+.next-button-container button:hover {
+    background-color: #FFF6B2;
+
+}
+
+.next-button-container button:hover,
+.modal-button-container button:hover {
+    color: black !important;
+}
+
+.next-button-container button:checked {
+    color: black;
+    /* Change text color when checked */
+}
+
+
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-animation: fadeIn 1.2s ease-in-out;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.modal-content-container {
+    height: 20rem;
+    width: 25rem;
+    background-color: rgb(35, 3, 151);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 0.25rem solid #FFF6B2;
+    border-radius: 0.9rem;
+    margin-left: 1.5rem;
+}
+
+.modal-content-container h1 {
+    font-size: 1.3rem;
+    height: 3rem;
+    color: lightgray;
+    text-align: center;
+}
+
+.grade-details {
+    width: 15rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.grade-details p {
+    color: white;
+    text-align: center;
+}
+
+.modal-button-container {
+    height: 2rem;
+    width: 35%;
+    display: flex;
+    background-image: url('assets/Next Button.png');
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-button-container button {
+    width: 10rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0.2rem solid #FFF6B2;
+    border-radius: 0.75rem;
+    outline: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.modal-button-container button:hover {
+    background-color: #FFF6B2;
+}
+
+.modal-button-container button:checked {
+    color: black;
+    /* Change text color when checked */
+}
+
+/* Small phones (up to 360px) */
+@media(max-width: 360px) {
+    .game-quiz-container {
+        width: 95%;
+        height: auto;
+        min-height: 85vh;
+        padding: 1rem 0;
+    }
+
+    .game-details-container {
+        width: 100%;
+        height: auto;
+        padding: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .game-details-container h1 {
+        font-size: 0.75rem;
+    }
+
+    .game-question-container {
+        height: auto;
+        min-height: 8rem;
+        padding: 1rem;
+        margin-top: -3rem;
+    }
+
+    .game-question-container h1 {
+        font-size: 0.85rem;
+        max-width: 85%;
+        line-height: 1.3;
+    }
+
+    .game-options-container {
+        width: 100%;
+        height: auto;
+        margin-top: -8rem;
+        gap: 0.5rem;
+    }
+
+    .game-options-container span {
+        width: 90%;
+        height: auto;
+        margin-top: 0.5rem;
+    }
+
+    span label {
+        width: 100%;
+        height: auto;
+        min-height: 2.5rem;
+        font-size: 0.7rem;
+        padding: 0.5rem;
+        margin-left: 0;
+        border: 0.15rem solid #FFF6B2;
+        border-radius: 0.6rem;
+    }
+
+    .next-button-container {
+        width: 90%;
+        margin-top: -8rem;
+    }
+
+    .next-button-container button {
+        width: 100%;
+        height: 2.5rem;
+        font-size: 0.9rem;
+        margin-top: 0;
+        margin-left: 0;
+        border: 0.15rem solid #FFF6B2;
+        border-radius: 0.6rem;
+    }
+
+    .modal-content-container {
+        width: 90%;
+        height: auto;
+        min-height: 18rem;
+        padding: 1rem;
+        margin-left: 0;
+    }
+
+    .modal-content-container h1 {
+        font-size: 1rem;
+    }
+
+    .grade-details {
+        width: 100%;
+        height: auto;
+    }
+
+    .grade-details p {
+        font-size: 0.9rem;
+    }
+
+    .modal-button-container button {
+        width: 8rem;
+        height: 2rem;
+        font-size: 0.9rem;
+        border: 0.15rem solid #FFF6B2;
+        border-radius: 0.6rem;
+    }
+}
+
+/* Medium phones (361px - 480px) */
+@media(min-width: 361px) and (max-width: 480px) {
+    .game-quiz-container {
+        width: 95%;
+        height: auto;
+        min-height: 85vh;
+        padding: 1rem 0;
+    }
+
+    .game-details-container {
+        width: 100%;
+        height: auto;
+        padding: 0.5rem;
+    }
+
+    .game-details-container h1 {
+        font-size: 0.9rem;
+    }
+
+    .game-question-container {
+        height: auto;
+        min-height: 10rem;
+        padding: 1.5rem;
+        margin-top: -3rem;
+    }
+
+    .game-question-container h1 {
+        font-size: 1rem;
+        max-width: 85%;
+        line-height: 1.4;
+    }
+
+    .game-options-container {
+        width: 100%;
+        height: auto;
+        margin-top: -8rem;
+        gap: 0.5rem;
+    }
+
+    .game-options-container span {
+        width: 90%;
+        height: auto;
+        margin-top: 0.5rem;
+    }
+
+    span label {
+        width: 100%;
+        height: auto;
+        min-height: 3rem;
+        font-size: 0.8rem;
+        padding: 0.6rem;
+        margin-left: 0;
+        border: 0.18rem solid #FFF6B2;
+        border-radius: 0.7rem;
+    }
+
+    .next-button-container {
+        width: 90%;
+        margin-top: -8rem;
+    }
+
+    .next-button-container button {
+        width: 100%;
+        height: 2.8rem;
+        font-size: 1rem;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .modal-content-container {
+        width: 90%;
+        height: auto;
+        min-height: 20rem;
+        padding: 1.5rem;
+        margin-left: 0;
+    }
+
+    .modal-content-container h1 {
+        font-size: 1.1rem;
+    }
+
+    .grade-details {
+        width: 100%;
+        height: auto;
+    }
+
+    .modal-button-container button {
+        width: 9rem;
+        height: 2rem;
+        font-size: 1rem;
+        border: 0.18rem solid #FFF6B2;
+        border-radius: 0.7rem;
+    }
+}
+
+/* Large phones (481px - 768px) */
+@media(min-width: 481px) and (max-width: 768px) {
+    .game-quiz-container {
+        width: 90%;
+        height: auto;
+        min-height: 80vh;
+        padding: 1.5rem 0;
+    }
+
+    .game-details-container {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .game-details-container h1 {
+        font-size: 1.1rem;
+    }
+
+    .game-question-container {
+        height: auto;
+        min-height: 12rem;
+        padding: 2rem;
+        margin-top: -3rem;
+    }
+
+    .game-question-container h1 {
+        font-size: 1.2rem;
+        max-width: 80%;
+        line-height: 1.5;
+    }
+
+    .game-options-container {
+        width: 100%;
+        height: auto;
+        margin-top: -6rem;
+        gap: 0.8rem;
+    }
+
+    .game-options-container span {
+        width: 85%;
+        height: auto;
+        margin-top: 0.5rem;
+    }
+
+    span label {
+        width: 100%;
+        height: auto;
+        min-height: 3.5rem;
+        font-size: 0.9rem;
+        padding: 0.8rem;
+        margin-left: 0;
+    }
+
+    .next-button-container {
+        width: 85%;
+        margin-top: -6rem;
+    }
+
+    .next-button-container button {
+        width: 100%;
+        height: 3rem;
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .modal-content-container {
+        width: 85%;
+        height: auto;
+        min-height: 22rem;
+        padding: 2rem;
+        margin-left: 0;
+    }
+
+    .modal-content-container h1 {
+        font-size: 1.3rem;
+    }
+
+    .grade-details {
+        width: 100%;
+        height: auto;
+    }
+
+    .grade-details p {
+        font-size: 1rem;
+    }
+
+    .modal-button-container button {
+        width: 10rem;
+        height: 2.2rem;
+        font-size: 1.1rem;
+        border: 0.2rem solid #FFF6B2;
+        border-radius: 0.75rem;
+    }
+}
+
+/* Tablets (769px - 1024px) */
+@media(min-width: 769px) and (max-width: 1024px) {
+    .game-quiz-container {
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .game-details-container h1 {
+        font-size: 1.2rem;
+    }
+
+    .game-question-container h1 {
+        font-size: 1.3rem;
+    }
+
+    span label {
+        width: 45%;
+        margin-left: 0;
+        margin: 0 auto;
+    }
+
+    .next-button-container button {
+        margin-left: 0;
+    }
+
+    .modal-content-container {
+        width: 70%;
+        margin-left: 0;
+    }
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
