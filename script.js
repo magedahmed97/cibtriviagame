@@ -1,152 +1,152 @@
 const questions = [
     {
-        question: " من فودافون؟ SMS امتى تم اطلاق خدمة ",
-        optionA: "1999",
-        optionB: "2001",
-        optionC: "2002",
-        optionD: "2003",
-        correctOption: "optionA"
+        question: "تفتكر بنك CIB اتاسس سنة كام؟",
+        optionA: "1989",
+        optionB: "1975",
+        optionC: "1960",
+        optionD: "1955",
+        correctOption: "optionB"
     },
 
     {
-        question: "تفتكر إمتى تم تأسيس مؤسسة ڤودافون مصر لتنمية المجتمع؟",
-        optionA: "2002",
-        optionB: "2009",
-        optionC: "2003",
-        optionD: "2010",
-        correctOption: "optionC"
-    },
-
-    {
-        question: "كام عدد المحافظ علي ڤودافون كاش حاليا؟",
-        optionA: "15 M",
-        optionB: "20 M",
-        optionC: "3 M",
-        optionD: "18 M",
+        question: "CIB عنده كام فرع على مستوى مصر؟ ",
+        optionA: "50+ ",
+        optionB: "100+ ",
+        optionC: "150+ ",
+        optionD: "200+ ",
         correctOption: "optionD"
     },
 
     {
-        question: "ماهو حجم استثمارات ڤودافون مصر في الشبكة لحد دلوقتي؟",
-        optionA: "90 B",
-        optionB: "20 B",
-        optionC: "100 B",
-        optionD: "50 B",
+        question: "تعرف أول اسم لبنك CIB؟ ",
+        optionA: "Chase National Bank ",
+        optionB: "البنك الأهلي التجاري ",
+        optionC: "بنك Chase الدولي ",
+        optionD: "البنك التجاري Chase ",
         correctOption: "optionA"
     },
 
     {
-        question: "كام عدد المستفيدين من منصة تعليمي التي أطلقتها مؤسسة ڤودافون مصر لتنمية المجتمع ؟",
-        optionA: "3 M",
-        optionB: "2.5 M",
-        optionC: "1 M",
-        optionD: "1.5 M",
+        question: "تفتكر عدد الAtms CIB كام ؟",
+        optionA: "أكتر من 1000 ",
+        optionB: "أكتر من 1400 ",
+        optionC: "أكتر من 1600 ",
+        optionD: "أكتر من 1800 ",
         correctOption: "optionB"
     },
 
     {
-        question: "إمتى بدأت محفظة ڤودافون كاش في مصر؟",
-        optionA: "2015",
-        optionB: "2000",
-        optionC: "2014",
-        optionD: "2013",
+        question: "تفتكر أعلى limit للتحويل الفوري من CIB Mobile Banking app بيكون قد إيه؟",
+        optionA: "5 M",
+        optionB: "10 M",
+        optionC: "15 M",
+        optionD: "20 M",
         correctOption: "optionD"
     },
 
     {
-        question: "كم عدد المستفيدين من تطوير مشروع التأمين الصحي الشامل عن طريق ڤودافون؟",
-        optionA: "8 M",
-        optionB: "9 M",
-        optionC: "5 M",
-        optionD: "2 M",
-        correctOption: "optionC"
+        question: "CIB  موجود فين بره مصر؟ ",
+        optionA: "أمريكا ",
+        optionB: "السعودية ",
+        optionC: "تونس ",
+        optionD: "كينيا  ",
+        correctOption: "optionD"
     },
 
     {
-        question: "إمتى أصدرت ڤودافون أخر خبر صحفي؟",
-        optionA: "شهر مارس",
-        optionB: "شهر فبراير الماضي",
-        optionC: "منتصف شهر فبرايرالماضي",
-        optionD: "يناير الماضي",
+        question: "رقم الـCall Center  بتاع CIB  أيه؟  ",
+        optionA: "19666 ",
+        optionB: "19555 ",
+        optionC: "19444 ",
+        optionD: "19333 ",
         correctOption: "optionA"
     },
 
     {
-        question: "تطبيق أنا ڤودافون أتعمل سنة كام؟",
-        optionA: "2015",
-        optionB: "2011",
-        optionC: "2017",
-        optionD: "2000",
+        question: "تقدر تفتح حساب myCIB لو عندك كام سنة؟  ",
+        optionA: "12 ",
+        optionB: "15 ",
+        optionC: "18 ",
+        optionD: "21 ",
         correctOption: "optionB"
     },
 
-   {
-        question: "كام مرة ڤودافون مصر أصدرت تقرير الاستدامة؟",
-        optionA: "5",
-        optionB: "7",
-        optionC: "4",
-        optionD: "1",
+    {
+        question: "تقدر تقدم على بطاقة ائتمانية أساسية لو عندك كام سنة؟ ",
+        optionA: "16 ",
+        optionB: "18 ",
+        optionC: "20 ",
+        optionD: "21 ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "إيه الـMinimum Balance علشان العميل يكون في قطاع Plus؟ ",
+        optionA: "100,000 ",
+        optionB: "200,000 ",
+        optionC: "300,000 ",
+        optionD: "500,000 ",
+        correctOption: "optionC"
+    },
+    {
+        question: "إيه الـMinimum Balance علشان العميل يكون في قطاع Wealth؟ ",
+        optionA: "500,000 ",
+        optionB: "1,000,000 ",
+        optionC: "1,500,000 ",
+        optionD: "2,000,000 ",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "إيه الـMinimum Balance علشان العميل يكون في قطاع Private؟ ",
+        optionA: "10,000,000 ",
+        optionB: "12,000,000 ",
+        optionC: "15,000,000 ",
+        optionD: "20,000,000 ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "إيه الـCredit Card  اللي عملاء CIB Private بس يقدروا يطلعوه؟ ",
+        optionA: "World Card ",
+        optionB: "Platinum Card ",
+        optionC: "Titanium Card ",
+        optionD: "Metal Card ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "محتاج إيه علشان تفتح حساب myCIB؟ ",
+        optionA: "البطاقة بس ",
+        optionB: "البطاقة وإثبات دخل ",
+        optionC: "البطاقة وجواز السفر ",
+        optionD: "البطاقة وشهادة دراسية ",
         correctOption: "optionA"
     },
-	   {
-        question: "إعلان ڤودافون مصر لرمضان 2024 بيتكلم عن إيه؟",
-        optionA: "اللمة الحلوة",
-        optionB: "الكلمة الحلوة",
-        optionC: "الناس الحلوة",
-        optionD: "شكرا من هنا لبكرة",
-        correctOption: "optionB"
+
+    {
+        question: "بطاقة CIB World Elite بتدي كام BONUS Point على كل جنيه بتدفعه بيها جوه مصر؟ ",
+        optionA: "1 BONUS Points ",
+        optionB: "2 BONUS Points ",
+        optionC: "3 BONUS Points ",
+        optionD: "4 BONUS Points ",
+        correctOption: "optionD"
     },
 
     {
-        question: "جمع حبايبك يلا نبقا قريبين ده' إعلان ڤودافون رمضان سنه كام؟'",
-        optionA: "2020",
-        optionB: "2018",
-        optionC: "2019",
-        optionD: "2000",
-        correctOption: "optionC"
-    },
-
-    {
-        question: "مين العائلة المشهورة اللي ظهرت في إعلان ڤودافون رمضان سنه 2023؟",
-        optionA: "MO Salah",
-        optionB: "Amr Diab",
-        optionC: "Yasmine Abdel Aziz",
-        optionD: "Mola",
-        correctOption: "optionA"
-    },
-
-    {
-        question: "مين بطلة إعلان ڤودافون رمضان 2021؟",
-        optionA: "ياسمين عبد العزيز",
-        optionB: "شيرين عبد الوهاب",
-        optionC: "شيريهان",
-        optionD: "مني زكي",
-        correctOption: "optionC"
-    },
-
-    {
-        question: "فاكر كان امتى ؟ Conference call فودافون كانت أول شركة تعمل ",
-        optionA: "2006",
-        optionB: "2001",
-        optionC: "2000",
-        optionD: "2019",
-        correctOption: "optionB"
-    },
-
-    {
-        question: "ڤودافون  كانت أول شركة تقدم خدمة “كلمني شكرا”، فاكر إمتى؟",
-        optionA: "2008",
-        optionB: "2005",
-        optionC: "2004",
-        optionD: "2000",
-        correctOption: "optionC"
+        question: "إيه من الخدمات دي ممكن تنجزها من CIB Mobile Banking App؟ ",
+        optionA: "تربط شهادات أو ودائع ",
+        optionB: "تسدد مستحقات الـCredit Card ",
+        optionC: "تقدم على قرض أو كريديت كارد ",
+        optionD: "كله وخدمات تانية كتير 😉 ",
+        correctOption: "optionD"
     }
 
-   
+
 ]
 let shuffledQuestions = [] //empty array to hold shuffled selected questions
 
-function handleQuestions() { 
+function handleQuestions() {
     //function to shuffle and push 5 questions to shuffledQuestions array
     while (shuffledQuestions.length <= 4) {
         const random = questions[Math.floor(Math.random() * questions.length)]
@@ -158,8 +158,8 @@ function handleQuestions() {
 
 
 let questionNumber = 1
-let playerScore = 0  
-let wrongAttempt = 0 
+let playerScore = 0
+let wrongAttempt = 0
 let indexNumber = 0
 
 // function for displaying next question in the array to dom
@@ -189,7 +189,7 @@ function checkForAnswer() {
             correctOption = option.labels[0].id
         }
     })
-   
+
     //checking to make sure a radio input has been checked or an option being chosen
     if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
         document.getElementById('option-modal').style.display = "flex"
@@ -265,12 +265,12 @@ function handleEndGame() {
         remark = "Congrats! You won a giveaway"
         remarkColor = "white"
     }
-	
-    else if (playerScore < 5 ) {
+
+    else if (playerScore < 5) {
         remark = "Hard Luck You Can Try again"
         remarkColor = "white"
     }
-	/*
+    /*
     else if (playerScore >= 7) {
         remark = "Excellent, Keep the good work going."
         remarkColor = "green"
@@ -280,21 +280,21 @@ function handleEndGame() {
     //data to display to score board
     document.getElementById('remarks').innerHTML = remark
     document.getElementById('remarks').style.color = remarkColor
-   /* document.getElementById('grade-percentage').innerHTML = playerGrade*/
+    /* document.getElementById('grade-percentage').innerHTML = playerGrade*/
     document.getElementById('wrong-answers').innerHTML = wrongAttempt
     document.getElementById('right-answers').innerHTML = playerScore
     document.getElementById('score-modal').style.display = "flex"
 
 }
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const nextButton = document.querySelector('.next-button');
     const modalButton = document.querySelector('.modal-button');
 
-    nextButton.addEventListener('click', function() {
+    nextButton.addEventListener('click', function () {
         nextButton.classList.toggle('checked');
     });
 
-    modalButton.addEventListener('click', function() {
+    modalButton.addEventListener('click', function () {
         modalButton.classList.toggle('checked');
     });
 });
