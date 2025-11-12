@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'CIB';
+    src: local('CIB');
+}
+
+@font-face {
+    font-family: 'CIB Medium';
+    src: local('CIB Medium'), local('CIB-Medium');
+    font-weight: 500;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,10 +22,26 @@ body {
 
 
 body {
-    font-family: VodafoneRg;
+    font-family: 'CIB Medium', 'CIB', VodafoneRg, sans-serif;
     /* Optional: Set your preferred font */
     -webkit-user-select: none;
     user-select: none;
+}
+
+/* CSS for displaying mixed English and Arabic text */
+.artext {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.entext {
+    direction: ltr;
+}
+
+/* Ensure proper bidirectional text handling */
+[dir="auto"] {
+    unicode-bidi: plaintext;
+    text-align: start;
 }
 
 
@@ -92,7 +119,8 @@ main {
     padding: 3px;
     max-width: 70%;
     word-wrap: break-word;
-
+    font-family: 'CIB Medium', 'CIB', sans-serif;
+    font-weight: 500;
 }
 
 .game-options-container {
@@ -121,7 +149,7 @@ span label {
     border-radius: 0.9rem;
     cursor: pointer;
     transition: all 0.3s;
-    font-weight: 800;
+    font-weight: 500;
     color: rgb(225, 225, 225);
     font-size: 0.75rem;
     text-align: center;
@@ -131,6 +159,7 @@ span label {
     justify-content: center;
     box-sizing: border-box;
     word-wrap: break-word;
+    font-family: 'CIB Medium', 'CIB', sans-serif;
 }
 
 span label:hover {
