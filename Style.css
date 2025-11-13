@@ -85,7 +85,7 @@ main {
 
 .game-details-container h1 {
     font-size: 1.3rem;
-    color: #FFF6B2;
+    color: #FFFFFF;
     font-family: 'CIB Medium', 'CIB', sans-serif;
 }
 
@@ -115,7 +115,7 @@ main {
 .game-question-container h1 {
     font-size: 20px;
     text-align: center;
-    color: #FFF6B2;
+    color: #FFFFFF;
     padding: 3px;
     max-width: 70%;
     word-wrap: break-word;
@@ -207,6 +207,8 @@ input[type="radio"]:checked+label {
     border-radius: 0.9rem;
     background-color: #f47721;
     color: #ffffff;
+    /* smooth transitions for background, text and border */
+    transition: background-color 180ms ease, color 180ms ease, border-color 220ms ease, transform 120ms ease;
     font-weight: 1000;
     cursor: pointer;
 }
@@ -214,6 +216,19 @@ input[type="radio"]:checked+label {
 .next-button-container button:hover {
     background-color: #f47721;
 
+}
+
+/* Make button background white on click/focus for clear feedback */
+.next-button-container button:active,
+.next-button-container button:focus,
+.next-button-container button:focus-visible {
+    background-color: #FFFFFF;
+    color: #000000;
+    outline: none;
+    /* make border white while active/focused, will transition back to orange */
+    border-color: #FFFFFF;
+    /* subtle pressed effect */
+    transform: translateY(1px);
 }
 
 .next-button-container button:hover,
