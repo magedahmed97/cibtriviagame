@@ -86,7 +86,7 @@ main {
 .game-details-container h1 {
     font-size: 1.3rem;
     color: #FFF6B2;
-    font-family: VodafoneRgBd_0;
+    font-family: 'CIB Medium', 'CIB', sans-serif;
 }
 
 .game-details-container h1:first-child {
@@ -326,12 +326,12 @@ input[type="radio"]:checked+label {
 
     .game-details-container h1 {
         font-size: 0.9rem;
-        margin-left: 0.5rem !important;
+        margin-left: 2rem !important;
         margin-right: 0.5rem !important;
     }
 
     .game-details-container h1:first-child {
-        margin-left: 0.5rem;
+        margin-left: 2rem;
     }
 
     .game-details-container h1:last-child {
