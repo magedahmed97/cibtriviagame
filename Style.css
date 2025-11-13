@@ -145,7 +145,7 @@ span label {
     width: 100%;
     height: auto;
     min-height: 3rem;
-    border: 0.25rem solid #FFF6B2;
+    border: 0.25rem solid #f47721;
     border-radius: 0.9rem;
     cursor: pointer;
     transition: all 0.3s;
@@ -176,7 +176,7 @@ input[type="radio"] {
 
 /* option box  color when checked*/
 input[type=radio]:checked~.option {
-    background: #FFF6B2;
+    background: #f47721;
 }
 
 
@@ -203,16 +203,16 @@ input[type="radio"]:checked+label {
 .next-button-container button {
     width: 18rem;
     height: 3rem;
-    border: 0.25rem solid #FFF6B2;
+    border: 0.25rem solid #f47721;
     border-radius: 0.9rem;
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(255, 255, 255);
+    background-color: #f47721;
+    color: #ffffff;
     font-weight: 1000;
     cursor: pointer;
 }
 
 .next-button-container button:hover {
-    background-color: #FFF6B2;
+    background-color: #f47721;
 
 }
 
@@ -360,7 +360,7 @@ input[type="radio"]:checked+label {
         font-size: 0.85rem;
         padding: 0.6rem;
         min-height: 3rem;
-        border: 0.2rem solid #FFF6B2;
+        border: 0.2rem solid #f47721;
     }
 
     .next-button-container {
@@ -372,7 +372,7 @@ input[type="radio"]:checked+label {
         width: 100%;
         height: 2.5rem;
         font-size: 0.95rem;
-        border: 0.2rem solid #FFF6B2;
+        border: 0.2rem solid #f47721;
     }
 
     .modal-content-container {
@@ -450,7 +450,7 @@ input[type="radio"]:checked+label {
         font-size: 0.75rem;
         padding: 0.4rem;
         min-height: 2.8rem;
-        border: 0.15rem solid #FFF6B2;
+        border: 0.15rem solid #f47721;
     }
 
     .next-button-container {
@@ -462,7 +462,7 @@ input[type="radio"]:checked+label {
         width: 100%;
         height: 2.3rem;
         font-size: 0.85rem;
-        border: 0.15rem solid #FFF6B2;
+        border: 0.15rem solid #f47721;
     }
 
     .modal-content-container {
